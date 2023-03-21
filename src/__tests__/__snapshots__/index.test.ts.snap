@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index Given ESLint is configured with the \`@esxl/eslint-config-base\` configuration When it runs against a file with code that uses CommonJS APIs, Then it returns with an error (js) 1`] = `
+{
+  "column": 1,
+  "endColumn": 15,
+  "endLine": 1,
+  "line": 1,
+  "message": "Expected "export" or "export default"",
+  "nodeType": "MemberExpression",
+  "ruleId": "import/no-commonjs",
+  "severity": 2,
+}
+`;
+
+exports[`index Given ESLint is configured with the \`@esxl/eslint-config-base\` configuration When it runs against a file with code that uses CommonJS APIs, Then it returns with an error (ts) 1`] = `
+{
+  "column": 1,
+  "endColumn": 15,
+  "endLine": 1,
+  "line": 1,
+  "message": "Expected "export" or "export default"",
+  "nodeType": "MemberExpression",
+  "ruleId": "import/no-commonjs",
+  "severity": 2,
+}
+`;
+
+exports[`index Given ESLint is configured with the \`@esxl/eslint-config-base\` configuration When it runs against a file with code that uses DOM APIs, Then it returns with an error (js) 1`] = `
+{
+  "column": 10,
+  "endColumn": 18,
+  "endLine": 2,
+  "line": 2,
+  "message": "'document' is not defined.",
+  "messageId": "undef",
+  "nodeType": "Identifier",
+  "ruleId": "no-undef",
+  "severity": 2,
+}
+`;
+
+exports[`index Given ESLint is configured with the \`@esxl/eslint-config-base\` configuration When it runs against a file with code that uses DOM APIs, Then it returns with an error (ts) 1`] = `
+{
+  "column": 10,
+  "endColumn": 18,
+  "endLine": 2,
+  "line": 2,
+  "message": "'document' is not defined.",
+  "messageId": "undef",
+  "nodeType": "Identifier",
+  "ruleId": "no-undef",
+  "severity": 2,
+}
+`;

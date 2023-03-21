@@ -1,0 +1,94 @@
+{
+  "dependencies": {
+    "@babel/eslint-parser": "^7.21.3",
+    "@esxl/constants": "0.3.0",
+    "@typescript-eslint/parser": "^5.56.0"
+  },
+  "description": "A shareable ESLint configuration for all EcmaScript based projects",
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/eslint-plugin": "^7.19.1",
+    "@babel/plugin-transform-runtime": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.21.0",
+    "@esxl/config-jest-base": "0.1.0",
+    "@esxl/config-typescript-base": "0.1.1",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/confusing-browser-globals": "^1.0.0",
+    "@types/eslint": "^8.21.3",
+    "@types/estree": "1.0.0",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.5",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1",
+    "jest": "^29.5.0",
+    "lint-staged": "^13.2.0",
+    "prettier": "2.8.6",
+    "rollup": "^3.20.0",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2"
+  },
+  "engines": {
+    "node": "^16 || ^18 || >=19",
+    "npm": ">=8.19.3"
+  },
+  "exports": {
+    "import": "./dist/eslint-config.mjs",
+    "require": "./dist/eslint-config.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "jest": {
+    "preset": "@esxl/config-jest-base"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  },
+  "main": "./dist/eslint-config.cjs",
+  "name": "@esxl/eslint-config-base",
+  "peerDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/eslint-plugin": "^7.19.1",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "jest": "^29.5.0",
+    "typescript": "^5.0.2"
+  },
+  "peerDependenciesMeta": {
+    "jest": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esxl/eslint-config.git"
+  },
+  "scripts": {
+    "build": "rollup --config .rollup.config.ts --configPlugin '@rollup/plugin-babel={ babelHelpers: \"runtime\", exclude: /node_modules/, extensions: [\".ts\"] }'",
+    "format:check": "prettier --check --ignore-unknown .",
+    "format:fix": "prettier --ignore-unknown --write .",
+    "postversion": "git push origin --follow-tags",
+    "pre-commit": "lint-staged",
+    "prepare": "is-ci || husky install",
+    "preversion": "npm run format:check && npm run types && npm test && npm run build",
+    "test": "jest",
+    "test:debug": "jest --debug --detectOpenHandles --runInBand",
+    "types": "tsc --listEmittedFiles"
+  },
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "version": "0.0.0"
+}
