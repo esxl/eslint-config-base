@@ -61,6 +61,18 @@ export default {
       files: ECMA_EXTENSIONS.map(
         (extension) => `src/**/__tests__/*.test.${extension}`
       ),
+      /**
+       * Some rules, for example `jest/unbound-method`, require type information
+       * in order to run, so they MUST use the `@typescript-eslint/parser`.
+       *
+       * @see https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md#how-to-use
+       */
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        project: true,
+        sourceType: "module",
+        warnOnUnsupportedTypeScriptVersion: true,
+      },
       plugins: ["eslint-plugin-jest"],
       rules: eslintPluginJest,
     },

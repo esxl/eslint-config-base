@@ -83,5 +83,23 @@ describe("index", () => {
         });
       }
     );
+
+    describe('And the file exists within a directory named "__tests__"', () => {
+      test.each([Extensions.TypeScript /*Extensions.TypeScript_JSX*/])(
+        "When it runs against a TypeScript test file with valid code, Then it does not return any errors or warnings (%s)",
+        async (extension) => {
+          expect.hasAssertions();
+
+          const [result] = await eslint.lintFiles([
+            join(__dirname, `jest-litmus.test.${extension}`),
+          ]);
+
+          expect(result).toMatchObject({
+            errorCount: 0,
+            warningCount: 0,
+          });
+        }
+      );
+    });
   });
 });
