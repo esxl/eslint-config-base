@@ -2,7 +2,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.21.3",
     "@esxl/constants": "0.4.0",
-    "@typescript-eslint/parser": "^5.57.1"
+    "@typescript-eslint/parser": "^5.58.0"
   },
   "description": "A shareable ESLint configuration for all EcmaScript based projects",
   "devDependencies": {
