@@ -6,7 +6,7 @@
   },
   "description": "A shareable ESLint configuration for all EcmaScript based projects",
   "devDependencies": {
-    "@babel/core": "^7.21.8",
+    "@babel/core": "^7.22.1",
     "@babel/eslint-plugin": "^7.19.1",
     "@babel/plugin-transform-runtime": "^7.21.4",
     "@babel/preset-env": "^7.21.5",
@@ -56,7 +56,7 @@
   "main": "./dist/eslint-config.cjs",
   "name": "@esxl/eslint-config-base",
   "peerDependencies": {
-    "@babel/core": "^7.21.8",
+    "@babel/core": "^7.22.1",
     "@babel/eslint-plugin": "^7.19.1",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "eslint": "^8.40.0",
